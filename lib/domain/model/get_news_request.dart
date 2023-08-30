@@ -8,6 +8,7 @@ class GetNewsRequest implements HasJson {
   const GetNewsRequest({
     required this.apiKey,
     required this.category,
+    required this.country,
   });
 
   const GetNewsRequest.sport({
@@ -15,6 +16,7 @@ class GetNewsRequest implements HasJson {
   }) : this(
           apiKey: apiKey,
           category: 'sports',
+          country: 'us',
         );
 
   factory GetNewsRequest.fromJson(Map<String, dynamic> json) => _$GetNewsRequestFromJson(json);
@@ -24,6 +26,9 @@ class GetNewsRequest implements HasJson {
 
   @JsonKey(name: 'category', defaultValue: '')
   final String category;
+
+  @JsonKey(name: 'country', defaultValue: '')
+  final String country;
 
   @override
   Map<String, dynamic> toJson() => _$GetNewsRequestToJson(this);

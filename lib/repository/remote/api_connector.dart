@@ -1,33 +1,48 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:blankscreen/config/config.dart';
 import 'package:blankscreen/domain/model/base/has_json.dart';
 import 'package:blankscreen/domain/model/news_model.dart';
-import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
+import 'package:http/io_client.dart';
 
 class ApiConnector {
   /// Singleton ->
   static ApiConnector? _instance;
 
   ApiConnector._internal({
+    required this.httpClient,
     required this.config,
   });
 
   factory ApiConnector({
+    required HttpClient httpClient,
     required Config config,
   }) {
-    _instance ??= ApiConnector._internal(config: config);
+    _instance ??= ApiConnector._internal(
+      httpClient: httpClient,
+      config: config,
+    );
+
     return _instance!;
   }
 
-  final Config config;
-
   /// Singleton <-
+
+  final HttpClient httpClient;
+  final Config config;
+  late final IOClient ioClient;
+
+  void init() {
+    httpClient.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+    ioClient = IOClient(httpClient);
+  }
 
   Future<NewsModel> getNews(HasJson params) async {
     final Uri uri = Uri.https(config.apiAuthority, config.apiPath, params.toJson());
 
-    final http.Response response = await http.get(uri);
+    final Response response = await ioClient.get(uri);
 
     return NewsModel.fromJson(jsonDecode(response.body));
   }

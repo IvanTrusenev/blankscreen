@@ -10,10 +10,12 @@ GetNewsRequest _$GetNewsRequestFromJson(Map<String, dynamic> json) =>
     GetNewsRequest(
       apiKey: json['apiKey'] as String? ?? '',
       category: json['category'] as String? ?? '',
+      country: json['country'] as String? ?? '',
     );
 
 Map<String, dynamic> _$GetNewsRequestToJson(GetNewsRequest instance) =>
     <String, dynamic>{
       'apiKey': instance.apiKey,
       'category': instance.category,
+      'country': instance.country,
     };

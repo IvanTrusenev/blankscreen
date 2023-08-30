@@ -1,0 +1,44 @@
+import 'package:blankscreen/bloc/news/news_bloc.dart';
+import 'package:blankscreen/domain/model/news_model.dart';
+import 'package:blankscreen/ui/screen/news_screen/widget/news_article.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class NewsScreen extends StatelessWidget {
+  const NewsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final String status = context.select((NewsBloc bloc) => bloc.state.news.status);
+    if (status != 'ok') return const SizedBox.shrink();
+
+    final NewsModel news = context.select((NewsBloc bloc) => bloc.state.news);
+    final List<Widget> articles = news.articles
+        .map(
+          (article) => Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 8.h,
+              horizontal: 8.w,
+            ),
+            child: NewsArticle(article: article),
+          ),
+        )
+        .toList(growable: false);
+
+    return Container(
+      height: double.infinity,
+      color: Colors.white,
+      child: SafeArea(
+        child: Material(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: articles,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
