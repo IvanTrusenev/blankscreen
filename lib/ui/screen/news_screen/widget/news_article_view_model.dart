@@ -11,4 +11,6 @@ class NewsArticleViewModel extends ChangeNotifier {
   final NewsArticleModel article;
 
   void showNewsArticle(BuildContext context) => context.go('/details', extra: {'NewsUrl': article.url});
+
+  void showNewsArticle2(BuildContext context) => context.go('/details2', extra: {'Article': article});
 }
