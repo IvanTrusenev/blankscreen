@@ -20,12 +20,10 @@ class ApiConnector {
     required HttpClient httpClient,
     required Config config,
   }) {
-    _instance ??= ApiConnector._internal(
+    return _instance ??= ApiConnector._internal(
       httpClient: httpClient,
       config: config,
     );
-
-    return _instance!;
   }
 
   /// Singleton <-
@@ -39,11 +37,24 @@ class ApiConnector {
     ioClient = IOClient(httpClient);
   }
 
+  Future<bool> hasNetwork() async {
+    try {
+      final result = await InternetAddress.lookup(config.apiAuthority);
+      return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
+    } on SocketException catch (_) {
+      return false;
+    }
+  }
+
   Future<NewsModel> getNews(HasJson params) async {
     final Uri uri = Uri.https(config.apiAuthority, config.apiPath, params.toJson());
 
     final Response response = await ioClient.get(uri);
 
-    return NewsModel.fromJson(jsonDecode(response.body));
+    if (response.statusCode == 200) {
+      return NewsModel.fromJson(jsonDecode(response.body));
+    }
+
+    return const NewsModel.empty();
   }
 }

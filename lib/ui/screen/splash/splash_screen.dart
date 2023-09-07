@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class NoInternetConnectionScreen extends StatelessWidget {
-  const NoInternetConnectionScreen({super.key});
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +9,7 @@ class NoInternetConnectionScreen extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         color: Colors.white,
-        child: const Text('No internet connection'),
+        child: const Text('Splash screen'),
       ),
     );
   }

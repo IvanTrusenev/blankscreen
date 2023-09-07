@@ -1,5 +1,6 @@
-import 'package:blankscreen/bloc/news/news_bloc.dart';
+import 'package:blankscreen/domain/mapper/news_mapper.dart';
 import 'package:blankscreen/domain/model/news_model.dart';
+import 'package:blankscreen/repository/local/database.dart';
 import 'package:blankscreen/ui/screen/news_screen/widget/news_article.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,10 +11,7 @@ class NewsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String status = context.select((NewsBloc bloc) => bloc.state.news.status);
-    if (status != 'ok') return const SizedBox.shrink();
-
-    final NewsModel news = context.select((NewsBloc bloc) => bloc.state.news);
+    final NewsModel news = context.select((Database database) => NewsMapper.fromEntity(database.readNews()).model);
     final List<Widget> articles = news.articles
         .map(
           (article) => Padding(

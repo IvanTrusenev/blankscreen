@@ -1,18 +1,19 @@
 import 'dart:io';
 
-import 'package:blankscreen/bloc/news/event/get_news_event.dart';
-import 'package:blankscreen/bloc/news/news_bloc.dart';
-import 'package:blankscreen/bloc/news/news_state.dart';
 import 'package:blankscreen/config/config.dart';
+import 'package:blankscreen/firebase_options.dart';
+import 'package:blankscreen/repository/local/database.dart';
 import 'package:blankscreen/repository/remote/api_connector.dart';
 import 'package:blankscreen/ui/screen/base_screen/base_screen.dart';
-import 'package:blankscreen/ui/screen/no_internet_connection/no_internet_connection_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   final Config config = Config();
   await config.init();
@@ -23,9 +24,15 @@ void main() async {
   );
   apiConnector.init();
 
+  final Database database = Database(
+    config: config,
+  );
+  await database.init();
+
   runApp(MyApp(
     config: config,
     apiConnector: apiConnector,
+    database: database,
   ));
 }
 
@@ -34,10 +41,12 @@ class MyApp extends StatelessWidget {
     super.key,
     required this.config,
     required this.apiConnector,
+    required this.database,
   });
 
   final Config config;
   final ApiConnector apiConnector;
+  final Database database;
 
   // This widget is the root of your application.
   @override
@@ -46,6 +55,7 @@ class MyApp extends StatelessWidget {
       providers: [
         RepositoryProvider.value(value: config),
         RepositoryProvider.value(value: apiConnector),
+        RepositoryProvider.value(value: database),
       ],
       child: ScreenUtilInit(
         designSize: const Size(480, 800),
