@@ -3,14 +3,14 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class MainViewModel extends ChangeNotifier {
-  MainViewModel({
-    required this.mainUrl,
+class NewsWebViewViewModel extends ChangeNotifier {
+  NewsWebViewViewModel({
+    required this.newsUrl,
   }) {
     init();
   }
 
-  final String mainUrl;
+  final String newsUrl;
   late final WebViewController webViewController;
 
   void init() {
@@ -31,6 +31,6 @@ class MainViewModel extends ChangeNotifier {
           },
         ),
       )
-      ..loadRequest(Uri.parse(mainUrl));
+      ..loadRequest(Uri.parse(newsUrl));
   }
 }

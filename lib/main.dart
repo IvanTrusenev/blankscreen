@@ -4,7 +4,7 @@ import 'package:blankscreen/config/config.dart';
 import 'package:blankscreen/firebase_options.dart';
 import 'package:blankscreen/repository/local/database.dart';
 import 'package:blankscreen/repository/remote/api_connector.dart';
-import 'package:blankscreen/ui/screen/base_screen/base_screen.dart';
+import 'package:blankscreen/router/router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return MaterialApp(
+          return MaterialApp.router(
             title: 'Flutter Demo',
             theme: ThemeData(
               // This is the theme of your application.
@@ -83,8 +83,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-            home: const BaseScreen(),
+            routerConfig: router,
           );
         },
       ),

@@ -27,7 +27,7 @@ class NewsArticle extends StatelessWidget {
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return InkWell(
-            onTap: context.read<NewsArticleViewModel>().launchBrowser,
+            onTap: () => context.read<NewsArticleViewModel>().showNewsArticle(context),
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
               decoration: BoxDecoration(

@@ -1,6 +1,7 @@
 import 'package:blankscreen/domain/model/news_article_model.dart';
 import 'package:flutter/foundation.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class NewsArticleViewModel extends ChangeNotifier {
   NewsArticleViewModel({
@@ -9,12 +10,5 @@ class NewsArticleViewModel extends ChangeNotifier {
 
   final NewsArticleModel article;
 
-  Future<void> launchBrowser() async {
-    try {
-      final Uri uri = Uri.parse(article.url);
-      await launchUrl(uri);
-    } catch (e) {
-      /// Nothing to do if Url is invalid or browser not start
-    }
-  }
+  void showNewsArticle(BuildContext context) => context.go('/details', extra: {'NewsUrl': article.url});
 }
