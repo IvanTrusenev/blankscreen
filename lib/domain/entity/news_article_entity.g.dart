@@ -27,13 +27,14 @@ class NewsArticleEntityAdapter extends TypeAdapter<NewsArticleEntity> {
       urlToImage: fields[5] == null ? '' : fields[5] as String,
       publishedAt: fields[6] == null ? '' : fields[6] as String,
       content: fields[7] == null ? '' : fields[7] as String,
+      assetImage: fields[8] == null ? '' : fields[8] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, NewsArticleEntity obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.source)
       ..writeByte(1)
@@ -49,7 +50,9 @@ class NewsArticleEntityAdapter extends TypeAdapter<NewsArticleEntity> {
       ..writeByte(6)
       ..write(obj.publishedAt)
       ..writeByte(7)
-      ..write(obj.content);
+      ..write(obj.content)
+      ..writeByte(8)
+      ..write(obj.assetImage);
   }
 
   @override

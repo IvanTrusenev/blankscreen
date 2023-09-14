@@ -11,6 +11,7 @@ class NewsArticleModel implements HasJson {
     required this.urlToImage,
     required this.publishedAt,
     required this.content,
+    required this.assetImage,
   });
 
   const NewsArticleModel.empty()
@@ -23,6 +24,7 @@ class NewsArticleModel implements HasJson {
           urlToImage: '',
           publishedAt: '',
           content: '',
+          assetImage: '',
         );
 
   factory NewsArticleModel.fromJson(Map<String, dynamic> json) {
@@ -43,6 +45,7 @@ class NewsArticleModel implements HasJson {
       urlToImage: json[_urlToImageKey] as String? ?? '',
       publishedAt: json[_publishedAtKey] as String? ?? '',
       content: json[_contentKey] as String? ?? '',
+      assetImage: '',
     );
   }
 
@@ -54,6 +57,7 @@ class NewsArticleModel implements HasJson {
   final String urlToImage;
   final String publishedAt;
   final String content;
+  final String assetImage;
 
   @override
   Map<String, dynamic> toJson() => {
@@ -65,6 +69,7 @@ class NewsArticleModel implements HasJson {
         _urlToImageKey: urlToImage,
         _publishedAtKey: publishedAt,
         _contentKey: content,
+        _assetImageKey: assetImage,
       };
 
   static const _sourceKey = 'source';
@@ -75,4 +80,5 @@ class NewsArticleModel implements HasJson {
   static const _urlToImageKey = 'urlToImage';
   static const _publishedAtKey = 'publishedAt';
   static const _contentKey = 'content';
+  static const _assetImageKey = 'assetImage';
 }

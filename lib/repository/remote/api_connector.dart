@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:blankscreen/config/config.dart';
 import 'package:blankscreen/domain/model/base/has_json.dart';
 import 'package:blankscreen/domain/model/news_model.dart';
+import 'package:blankscreen/domain/model/news_model_ext.dart';
 import 'package:http/http.dart';
 import 'package:http/io_client.dart';
 
@@ -56,5 +57,9 @@ class ApiConnector {
     }
 
     return const NewsModel.empty();
+  }
+
+  Future<NewsModel> getNewsMock(HasJson params) async {
+    return NewsModelExt.mock();
   }
 }

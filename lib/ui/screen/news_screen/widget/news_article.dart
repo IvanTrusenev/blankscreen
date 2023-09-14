@@ -27,8 +27,7 @@ class NewsArticle extends StatelessWidget {
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return InkWell(
-            // onTap: () => context.read<NewsArticleViewModel>().showNewsArticle(context),
-            onTap: () => context.read<NewsArticleViewModel>().showNewsArticle2(context),
+            onTap: () => context.read<NewsArticleViewModel>().showNewsArticle(context),
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
               decoration: BoxDecoration(
@@ -71,7 +70,7 @@ class NewsArticle extends StatelessWidget {
                         ),
                         Expanded(
                           flex: imageFlex,
-                          child: NewsArticleImage(imageUrl: article.urlToImage),
+                          child: NewsArticleImage(assetImage: article.assetImage),
                         ),
                       ],
                     ),

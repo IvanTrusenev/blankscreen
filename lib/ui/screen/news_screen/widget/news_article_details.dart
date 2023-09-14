@@ -13,6 +13,8 @@ class NewsArticleDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String description = article.description.isEmpty ? article.title : article.description;
+
     return Container(
       height: double.infinity,
       color: Colors.white,
@@ -45,20 +47,35 @@ class NewsArticleDetails extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 4.h),
-                  Center(
-                    child: SizedBox(
-                      height: 200.h,
-                      child: NewsArticleImage(imageUrl: article.urlToImage),
-                    ),
-                  ),
+                  Center(child: _NewsImage(assetImage: article.assetImage)),
                   SizedBox(height: 4.h),
-                  Text(article.description),
+                  Text(description),
                 ],
               ),
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class _NewsImage extends StatelessWidget {
+  const _NewsImage({
+    required this.assetImage,
+  });
+
+  final String assetImage;
+
+  @override
+  Widget build(BuildContext context) {
+    if (assetImage.isEmpty) {
+      return const SizedBox.shrink();
+    }
+
+    return SizedBox(
+      height: 200.h,
+      child: NewsArticleImage(assetImage: assetImage),
     );
   }
 }

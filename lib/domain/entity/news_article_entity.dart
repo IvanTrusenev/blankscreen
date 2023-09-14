@@ -14,6 +14,7 @@ class NewsArticleEntity {
     required this.urlToImage,
     required this.publishedAt,
     required this.content,
+    required this.assetImage,
   });
 
   const NewsArticleEntity.empty()
@@ -26,6 +27,7 @@ class NewsArticleEntity {
           urlToImage: '',
           publishedAt: '',
           content: '',
+          assetImage: '',
         );
 
   @HiveField(0, defaultValue: NewsSourceEntity.empty())
@@ -51,4 +53,7 @@ class NewsArticleEntity {
 
   @HiveField(7, defaultValue: '')
   final String content;
+
+  @HiveField(8, defaultValue: '')
+  final String assetImage;
 }

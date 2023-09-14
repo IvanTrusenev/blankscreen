@@ -10,7 +10,8 @@ Future<void> getNewsHandler(
   GetNewsEvent event,
   Emitter<AppState> emit,
 ) async {
-  final NewsModel response = await event.apiConnector.getNews(GetNewsRequest.sport(apiKey: event.apiConnector.config.apiKey));
+  // final NewsModel response = await event.apiConnector.getNews(GetNewsRequest.sport(apiKey: event.apiConnector.config.apiKey));
+  final NewsModel response = await event.apiConnector.getNewsMock(GetNewsRequest.sport(apiKey: event.apiConnector.config.apiKey));
 
   await event.database.writeNews(NewsMapper.fromModel(response).entity);
 

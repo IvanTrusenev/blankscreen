@@ -12,6 +12,7 @@ class NewsArticleMapper {
     required this.urlToImage,
     required this.publishedAt,
     required this.content,
+    required this.assetImage,
   });
 
   factory NewsArticleMapper.fromModel(NewsArticleModel model) {
@@ -24,6 +25,7 @@ class NewsArticleMapper {
       urlToImage: model.urlToImage,
       publishedAt: model.publishedAt,
       content: model.content,
+      assetImage: model.assetImage,
     );
   }
 
@@ -37,6 +39,7 @@ class NewsArticleMapper {
       urlToImage: entity.urlToImage,
       publishedAt: entity.publishedAt,
       content: entity.content,
+      assetImage: entity.assetImage,
     );
   }
 
@@ -48,6 +51,7 @@ class NewsArticleMapper {
   final String urlToImage;
   final String publishedAt;
   final String content;
+  final String assetImage;
 
   NewsArticleModel get model => NewsArticleModel(
         source: source.model,
@@ -58,6 +62,7 @@ class NewsArticleMapper {
         urlToImage: urlToImage,
         publishedAt: publishedAt,
         content: content,
+        assetImage: assetImage,
       );
 
   NewsArticleEntity get entity => NewsArticleEntity(
@@ -69,5 +74,6 @@ class NewsArticleMapper {
         urlToImage: urlToImage,
         publishedAt: publishedAt,
         content: content,
+        assetImage: assetImage,
       );
 }
