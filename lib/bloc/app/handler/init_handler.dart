@@ -13,7 +13,7 @@ Future<void> initHandler(
     emit(event.state.copyWith(appStateEnum: AppStateEnum.getRemoteConfig));
   } else {
     if (await event.apiConnector.hasNetwork()) {
-      emit(event.state.copyWith(appStateEnum: AppStateEnum.main));
+      emit(event.state.copyWith(appStateEnum: AppStateEnum.main, mainUrl: mainUrl));
     } else {
       emit(event.state.copyWith(appStateEnum: AppStateEnum.noInternetConnection));
     }

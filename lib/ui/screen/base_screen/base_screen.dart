@@ -3,6 +3,7 @@ import 'package:blankscreen/bloc/app/app_state.dart';
 import 'package:blankscreen/bloc/app/event/get_news_event.dart';
 import 'package:blankscreen/bloc/app/event/get_remote_config_event.dart';
 import 'package:blankscreen/bloc/app/event/init_event.dart';
+import 'package:blankscreen/bloc/app/event/save_main_url_event.dart';
 import 'package:blankscreen/bloc/app/event/start_event.dart';
 import 'package:blankscreen/bloc/app/model/app_state_enum.dart';
 import 'package:blankscreen/config/config.dart';
@@ -58,6 +59,15 @@ class BaseScreen extends StatelessWidget {
               ));
               break;
 
+            case AppStateEnum.main:
+              if (state.mainUrl.isNotEmpty) {
+                appBloc.add(SaveMainUrlEvent(
+                  state: state,
+                  database: database,
+                ));
+              }
+              break;
+
             default:
           }
         },
@@ -65,6 +75,7 @@ class BaseScreen extends StatelessWidget {
           AppStateEnum.splash,
           AppStateEnum.getRemoteConfig,
           AppStateEnum.getNews,
+          AppStateEnum.main,
         ].contains(curState.appStateEnum),
         builder: (BuildContext context, AppState state) {
           if (state.appStateEnum == AppStateEnum.initial) {
