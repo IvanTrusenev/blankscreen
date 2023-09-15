@@ -20,7 +20,10 @@ class MainViewModel extends ChangeNotifier {
 
   void setWebViewController(InAppWebViewController controller) => _webViewController = controller;
 
-  void setProgress(InAppWebViewController controller, int progress) => _progress = progress;
+  void setProgress(InAppWebViewController controller, int progress) {
+    _progress = progress;
+    notifyListeners();
+  }
 
   Future<bool> onBackPressed() async {
     if (_webViewController == null) return false;
