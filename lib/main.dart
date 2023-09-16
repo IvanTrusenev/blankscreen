@@ -18,15 +18,9 @@ void main() async {
   final Config config = Config();
   await config.init();
 
-  final ApiConnector apiConnector = ApiConnector(
-    httpClient: HttpClient(),
-    config: config,
-  );
-  apiConnector.init();
+  final ApiConnector apiConnector = ApiConnector(config: config);
 
-  final Database database = Database(
-    config: config,
-  );
+  final Database database = Database(config: config);
   await database.init();
 
   runApp(MyApp(
