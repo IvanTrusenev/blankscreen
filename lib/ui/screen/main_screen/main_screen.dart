@@ -1,5 +1,5 @@
-import 'package:blankscreen/repository/local/database.dart';
-import 'package:blankscreen/ui/screen/main_screen/main_view_model.dart';
+import 'package:EURB/repository/local/database.dart';
+import 'package:EURB/ui/screen/main_screen/main_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:provider/provider.dart';

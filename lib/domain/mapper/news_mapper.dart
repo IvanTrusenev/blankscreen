@@ -1,8 +1,8 @@
-import 'package:blankscreen/domain/entity/news_article_entity.dart';
-import 'package:blankscreen/domain/entity/news_entity.dart';
-import 'package:blankscreen/domain/mapper/news_article_mapper.dart';
-import 'package:blankscreen/domain/model/news_article_model.dart';
-import 'package:blankscreen/domain/model/news_model.dart';
+import 'package:EURB/domain/entity/news_article_entity.dart';
+import 'package:EURB/domain/entity/news_entity.dart';
+import 'package:EURB/domain/mapper/news_article_mapper.dart';
+import 'package:EURB/domain/model/news_article_model.dart';
+import 'package:EURB/domain/model/news_model.dart';
 
 class NewsMapper {
   const NewsMapper._internal({

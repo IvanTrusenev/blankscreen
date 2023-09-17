@@ -1,4 +1,4 @@
-import 'package:blankscreen/domain/model/base/has_json.dart';
+import 'package:EURB/domain/model/base/has_json.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'news_source_model.g.dart';

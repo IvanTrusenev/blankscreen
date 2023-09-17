@@ -1,5 +1,5 @@
-import 'package:blankscreen/domain/model/base/has_json.dart';
-import 'package:blankscreen/domain/model/news_source_model.dart';
+import 'package:EURB/domain/model/base/has_json.dart';
+import 'package:EURB/domain/model/news_source_model.dart';
 
 class NewsArticleModel implements HasJson {
   const NewsArticleModel({

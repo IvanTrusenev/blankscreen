@@ -1,5 +1,5 @@
-import 'package:blankscreen/domain/entity/remote_config_entity.dart';
-import 'package:blankscreen/domain/model/remote_config_model.dart';
+import 'package:EURB/domain/entity/remote_config_entity.dart';
+import 'package:EURB/domain/model/remote_config_model.dart';
 
 class RemoteConfigMapper {
   const RemoteConfigMapper._internal({

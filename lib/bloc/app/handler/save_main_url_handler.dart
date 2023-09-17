@@ -1,6 +1,6 @@
-import 'package:blankscreen/bloc/app/app_state.dart';
-import 'package:blankscreen/bloc/app/event/save_main_url_event.dart';
-import 'package:blankscreen/domain/entity/remote_config_entity.dart';
+import 'package:EURB/bloc/app/app_state.dart';
+import 'package:EURB/bloc/app/event/save_main_url_event.dart';
+import 'package:EURB/domain/entity/remote_config_entity.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 Future<void> saveMainUrlHandler(

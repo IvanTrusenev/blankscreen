@@ -5,7 +5,7 @@
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
-        android:label="blankscreen"
+        android:label="EURB"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"

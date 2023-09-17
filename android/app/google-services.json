@@ -1,43 +1,26 @@
 {
   "project_info": {
-    "project_number": "335273406170",
-    "project_id": "ru-trusenev-blankscreen",
-    "storage_bucket": "ru-trusenev-blankscreen.appspot.com"
+    "project_number": "928762544529",
+    "project_id": "dvdsv-deb8d",
+    "storage_bucket": "dvdsv-deb8d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:335273406170:android:f02d906ba9a479d50e7fe3",
+        "mobilesdk_app_id": "1:928762544529:android:a326563b81f733c8ae5a30",
         "android_client_info": {
-          "package_name": "ru.trusenev.blankscreen"
+          "package_name": "evets.matchez.euro.app"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "335273406170-hfjo1h9fr6o3hj21ti101anb47e9lujp.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCQDU_Z0lFuvesiRReNzUM1kyoV2mrXPrc"
+          "current_key": "AIzaSyB16KBfBprPM2d3-cUrUkAMUSm7UvyLMAQ"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "335273406170-hfjo1h9fr6o3hj21ti101anb47e9lujp.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "335273406170-822074ogqrhk4qbho98o3m55tua8nuul.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "ru.trusenev.blankscreen"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

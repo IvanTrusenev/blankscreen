@@ -1,4 +1,4 @@
-import 'package:blankscreen/bloc/app/app_state.dart';
+import 'package:EURB/bloc/app/app_state.dart';
 
 abstract class AppBaseEvent {
   const AppBaseEvent({

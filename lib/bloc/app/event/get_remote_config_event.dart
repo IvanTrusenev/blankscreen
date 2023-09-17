@@ -1,6 +1,6 @@
-import 'package:blankscreen/bloc/app/event/base/app_base_event.dart';
-import 'package:blankscreen/config/config.dart';
-import 'package:blankscreen/repository/local/database.dart';
+import 'package:EURB/bloc/app/event/base/app_base_event.dart';
+import 'package:EURB/config/config.dart';
+import 'package:EURB/repository/local/database.dart';
 
 class GetRemoteConfigEvent extends AppBaseEvent {
   const GetRemoteConfigEvent({

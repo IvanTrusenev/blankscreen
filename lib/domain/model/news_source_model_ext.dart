@@ -1,4 +1,4 @@
-import 'package:blankscreen/domain/model/news_source_model.dart';
+import 'package:EURB/domain/model/news_source_model.dart';
 
 extension NewsSourceModelExt on NewsSourceModel {
   static NewsSourceModel mock00() => const NewsSourceModel(

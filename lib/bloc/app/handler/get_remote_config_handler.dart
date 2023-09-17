@@ -1,6 +1,6 @@
-import 'package:blankscreen/bloc/app/app_state.dart';
-import 'package:blankscreen/bloc/app/event/get_remote_config_event.dart';
-import 'package:blankscreen/bloc/app/model/app_state_enum.dart';
+import 'package:EURB/bloc/app/app_state.dart';
+import 'package:EURB/bloc/app/event/get_remote_config_event.dart';
+import 'package:EURB/bloc/app/model/app_state_enum.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,4 +1,4 @@
-import 'package:blankscreen/bloc/app/event/base/app_base_event.dart';
+import 'package:EURB/bloc/app/event/base/app_base_event.dart';
 
 class StartEvent extends AppBaseEvent {
   const StartEvent({required super.state});

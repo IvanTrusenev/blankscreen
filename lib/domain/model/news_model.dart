@@ -1,5 +1,5 @@
-import 'package:blankscreen/domain/model/base/has_json.dart';
-import 'package:blankscreen/domain/model/news_article_model.dart';
+import 'package:EURB/domain/model/base/has_json.dart';
+import 'package:EURB/domain/model/news_article_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'news_model.g.dart';

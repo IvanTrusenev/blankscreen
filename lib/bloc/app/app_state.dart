@@ -1,4 +1,4 @@
-import 'package:blankscreen/bloc/app/model/app_state_enum.dart';
+import 'package:EURB/bloc/app/model/app_state_enum.dart';
 
 class AppState {
   const AppState({

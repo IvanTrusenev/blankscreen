@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:blankscreen/config/config.dart';
-import 'package:blankscreen/domain/model/base/has_json.dart';
-import 'package:blankscreen/domain/model/news_model.dart';
-import 'package:blankscreen/domain/model/news_model_ext.dart';
+import 'package:EURB/config/config.dart';
+import 'package:EURB/domain/model/base/has_json.dart';
+import 'package:EURB/domain/model/news_model.dart';
+import 'package:EURB/domain/model/news_model_ext.dart';
 
 class ApiConnector {
   /// Singleton ->
@@ -34,7 +34,5 @@ class ApiConnector {
     }
   }
 
-  Future<NewsModel> getNewsMock(HasJson params) async {
-    return NewsModelExt.mock();
-  }
+  Future<NewsModel> getNewsMock(HasJson params) async => NewsModelExt.mock();
 }

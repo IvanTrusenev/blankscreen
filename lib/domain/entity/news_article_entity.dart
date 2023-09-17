@@ -1,4 +1,4 @@
-import 'package:blankscreen/domain/entity/news_source_entity.dart';
+import 'package:EURB/domain/entity/news_source_entity.dart';
 import 'package:hive/hive.dart';
 
 part 'news_article_entity.g.dart';

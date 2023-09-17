@@ -1,6 +1,6 @@
-import 'package:blankscreen/domain/entity/news_article_entity.dart';
-import 'package:blankscreen/domain/mapper/news_source_mapper.dart';
-import 'package:blankscreen/domain/model/news_article_model.dart';
+import 'package:EURB/domain/entity/news_article_entity.dart';
+import 'package:EURB/domain/mapper/news_source_mapper.dart';
+import 'package:EURB/domain/model/news_article_model.dart';
 
 class NewsArticleMapper {
   const NewsArticleMapper._internal({

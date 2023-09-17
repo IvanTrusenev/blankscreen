@@ -1,10 +1,8 @@
-import 'dart:io';
-
-import 'package:blankscreen/config/config.dart';
-import 'package:blankscreen/firebase_options.dart';
-import 'package:blankscreen/repository/local/database.dart';
-import 'package:blankscreen/repository/remote/api_connector.dart';
-import 'package:blankscreen/router/router.dart';
+import 'package:EURB/config/config.dart';
+import 'package:EURB/firebase_options.dart';
+import 'package:EURB/repository/local/database.dart';
+import 'package:EURB/repository/remote/api_connector.dart';
+import 'package:EURB/router/router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

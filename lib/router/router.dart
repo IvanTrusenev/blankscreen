@@ -1,6 +1,6 @@
-import 'package:blankscreen/domain/model/news_article_model.dart';
-import 'package:blankscreen/ui/screen/base_screen/base_screen.dart';
-import 'package:blankscreen/ui/screen/news_screen/widget/news_article_details.dart';
+import 'package:EURB/domain/model/news_article_model.dart';
+import 'package:EURB/ui/screen/base_screen/base_screen.dart';
+import 'package:EURB/ui/screen/news_screen/widget/news_article_details.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

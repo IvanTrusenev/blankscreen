@@ -1,5 +1,5 @@
-import 'package:blankscreen/domain/model/news_article_model.dart';
-import 'package:blankscreen/domain/model/news_source_model_ext.dart';
+import 'package:EURB/domain/model/news_article_model.dart';
+import 'package:EURB/domain/model/news_source_model_ext.dart';
 
 extension NewsArticleModelExt on NewsArticleModel {
   static NewsArticleModel mock00() => NewsArticleModel(

@@ -1,6 +1,6 @@
-import 'package:blankscreen/bloc/app/event/base/app_base_event.dart';
-import 'package:blankscreen/repository/local/database.dart';
-import 'package:blankscreen/repository/remote/api_connector.dart';
+import 'package:EURB/bloc/app/event/base/app_base_event.dart';
+import 'package:EURB/repository/local/database.dart';
+import 'package:EURB/repository/remote/api_connector.dart';
 
 class InitEvent extends AppBaseEvent {
   const InitEvent({

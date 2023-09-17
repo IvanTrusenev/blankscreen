@@ -1,7 +1,7 @@
-import 'package:blankscreen/domain/mapper/news_mapper.dart';
-import 'package:blankscreen/domain/model/news_model.dart';
-import 'package:blankscreen/repository/local/database.dart';
-import 'package:blankscreen/ui/screen/news_screen/widget/news_article.dart';
+import 'package:EURB/domain/mapper/news_mapper.dart';
+import 'package:EURB/domain/model/news_model.dart';
+import 'package:EURB/repository/local/database.dart';
+import 'package:EURB/ui/screen/news_screen/widget/news_article.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

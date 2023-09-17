@@ -1,4 +1,4 @@
-package ru.trusenev.blankscreen
+package evets.matchez.euro.app
 
 import io.flutter.embedding.android.FlutterActivity
 

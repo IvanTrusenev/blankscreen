@@ -1,8 +1,8 @@
-import 'package:blankscreen/config/config.dart';
-import 'package:blankscreen/domain/entity/news_article_entity.dart';
-import 'package:blankscreen/domain/entity/news_entity.dart';
-import 'package:blankscreen/domain/entity/news_source_entity.dart';
-import 'package:blankscreen/domain/entity/remote_config_entity.dart';
+import 'package:EURB/config/config.dart';
+import 'package:EURB/domain/entity/news_article_entity.dart';
+import 'package:EURB/domain/entity/news_entity.dart';
+import 'package:EURB/domain/entity/news_source_entity.dart';
+import 'package:EURB/domain/entity/remote_config_entity.dart';
 import 'package:hive/hive.dart';
 
 class Database {
