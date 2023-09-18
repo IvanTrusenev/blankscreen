@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp.router(
-            title: 'Flutter Demo',
+            title: 'EURB',
             theme: ThemeData(
               // This is the theme of your application.
               //
