@@ -13,7 +13,8 @@ Future<void> getRemoteConfigHandler(
   try {
     final remoteConfig = FirebaseRemoteConfig.instance;
     await remoteConfig.fetchAndActivate();
-    mainUrl = remoteConfig.getString('MainUrl');
+
+    mainUrl = remoteConfig.getString('url');
   } catch (e) {
     return emit(event.state.copyWith(appStateEnum: AppStateEnum.noInternetConnection));
   }
