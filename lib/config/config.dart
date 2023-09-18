@@ -14,7 +14,7 @@ class Config {
   /// Singleton <-
 
   /// Api ->
-  String get apiAuthority => 'newsapi.org';
+  String get apiAuthority => 'google.com';
 
   String get apiPath => 'v2/top-headlines';
 

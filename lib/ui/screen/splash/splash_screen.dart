@@ -9,7 +9,15 @@ class SplashScreen extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         color: Colors.white,
-        child: const Text('Splash screen'),
+        child: const SizedBox(
+          width: 150,
+          height: 150,
+          child: CircularProgressIndicator(
+            value: null,
+            strokeWidth: 10,
+            semanticsLabel: 'Circular progress indicator',
+          ),
+        ),
       ),
     );
   }
